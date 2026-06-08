@@ -1,0 +1,30 @@
+{
+  "name": "test-job",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rspack build",
+    "dev": "rspack --open",
+    "format": "prettier --write .",
+    "preview": "rspack preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.5.2",
+      "onFail": "download"
+    }
+  },
+  "devDependencies": {
+    "@rspack/core": "^2.0.6",
+    "@rspack/cli": "^2.0.6",
+    "prettier": "^3.8.3",
+    "sass-embedded": "^1.100.0",
+    "sass-loader": "^17.0.0"
+  }
+}
