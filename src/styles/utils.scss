@@ -1,0 +1,8 @@
+@use "sass:math";
+
+@function fluid($value, $mod: 1) {
+  $num: math.div($value, $value * 0 + 1);
+  $unit: math.unit($value);
+
+  @return calc(#{$num} * #{$mod} * var(--screen-delta) + #{$value});
+}

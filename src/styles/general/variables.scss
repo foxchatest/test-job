@@ -1,0 +1,5 @@
+:root {
+  --init-width: 1230;
+  --init-width_units: calc(var(--init-width) * 1px);
+  --screen-delta: calc((100vw - var(--init-width_units)) / (var(--init-width) / 100) / 100);
+}
