@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rspack build",
-    "dev": "rspack --open",
+    "dev": "rspack dev --open",
     "format": "prettier --write .",
     "preview": "rspack preview"
   },
@@ -21,8 +21,9 @@
     }
   },
   "devDependencies": {
-    "@rspack/core": "^2.0.6",
     "@rspack/cli": "^2.0.6",
+    "@rspack/core": "^2.0.6",
+    "@rspack/dev-server": "^2.0.3",
     "prettier": "^3.8.3",
     "sass-embedded": "^1.100.0",
     "sass-loader": "^17.0.0"
