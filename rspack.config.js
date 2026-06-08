@@ -3,6 +3,19 @@ import { defineConfig } from "@rspack/cli";
 import { rspack } from "@rspack/core";
 import * as path from 'path'
 
+const sourcePath = path.join(process.cwd(), 'src')
+
+const keepFolderStructure = (pathData, replacer = '') => {
+  const sourceFile = pathData.filename
+  const relativeFile = path.relative(sourcePath, sourceFile)
+  const { dir, name } = path.parse(relativeFile)
+
+  return `${dir.replace('assets', replacer)}/${name}[ext]`
+}
+
+const keepFolderStructureForMedia = (pathData) => keepFolderStructure(pathData, 'media')
+const keepFolderStructureForFonts = (pathData) => keepFolderStructure(pathData, '')
+
 // Docs: https://rsbuild.rs/config/
 export default defineConfig({
   entry: {
@@ -23,19 +36,26 @@ export default defineConfig({
         ],
         type: "css/auto",
       },
+      {
+        test: /\.(png|jpg|jpeg|ico|svg|webp)/,
+        type: 'asset/resource',
+        generator: { filename: keepFolderStructureForMedia },
+      },
+      {
+        test: /\.(woff|woff2)$/,
+        type: "asset/resource",
+        generator: { filename: keepFolderStructureForFonts },
+      },
     ],
   },
   resolve: {
     alias: {
-      'src': path.resolve(__dirname, 'src'),
-      'public': path.resolve(__dirname, 'src', 'public'),
+      'src': path.resolve(process.cwd(), 'src'),
+      'public': path.resolve(process.cwd(), 'src', 'public'),
     },
   },
-  html: {
-    template: './src/pages/[name]/[name].html',
-  },
   plugins: [new rspack.HtmlRspackPlugin({
-
+    template: './src/pages/index/index.html',
     minify: false,
   })],
 });
