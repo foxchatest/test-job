@@ -1,0 +1,28 @@
+@use "src/styles/utils" as *;
+
+.input {
+  --pd-x: #{fluid(16px)};
+  --icon-size: #{fluid(16px)};
+  padding: fluid(14px) 0;
+  padding-right: calc(var(--pd-x) + var(--icon-size) + #{fluid(15px)});
+  padding-left: var(--pd-x);
+  font: var(--font-small);
+  border-radius: 4px;
+  border: 1px solid var(--gray-600);
+  width: 100%;
+  position: relative;
+  background-image: url("public/media/icons/search.svg");
+  background-position: center right var(--pd-x);
+  background-size: var(--icon-size);
+  background-repeat: no-repeat;
+  @include transition((border-color));
+
+  &::placeholder {
+    color: var(--gray-600);
+    opacity: 1;
+  }
+
+  &:focus {
+    border-color: var(--gray-900);
+  }
+}
