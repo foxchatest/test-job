@@ -5,10 +5,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rspack build",
-    "dev": "rspack dev --open",
+    "dev": "vite",
+    "build": "vite build",
     "format": "prettier --write .",
-    "preview": "rspack preview"
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
@@ -21,11 +21,9 @@
     }
   },
   "devDependencies": {
-    "@rspack/cli": "^2.0.6",
-    "@rspack/core": "^2.0.6",
-    "@rspack/dev-server": "^2.0.3",
     "prettier": "^3.8.3",
-    "sass-embedded": "^1.100.0",
-    "sass-loader": "^17.0.0"
+    "prettier-plugin-css-order": "^2.2.0",
+    "sass": "^1.100.0",
+    "vite": "^8.0.16"
   }
 }
