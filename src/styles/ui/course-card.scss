@@ -1,0 +1,18 @@
+@use "src/styles/utils" as *;
+
+.course-card {
+  &__price {
+    font: var(--font-large-bold);
+    color: var(--danger);
+  }
+
+  &__author {
+    font: var(--font-large-bold);
+    color: var(--gray-700);
+
+    &::before {
+      content: "|";
+      margin-right: fluid(8px);
+    }
+  }
+}

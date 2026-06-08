@@ -1,0 +1,31 @@
+@use "src/styles/utils" as *;
+
+.tag {
+  font: var(--font-small);
+  color: var(--bg);
+  background-color: var(--info);
+  border-radius: fluid(4px);
+  padding: 1px fluid(8px);
+
+  &_primary {
+    background-color: var(--primary);
+  }
+  &_danger {
+    background-color: var(--danger);
+  }
+  &_success {
+    background-color: var(--success);
+  }
+  &_info {
+    background-color: var(--info);
+  }
+  &_info-light {
+    background-color: var(--info-light);
+  }
+  &_warning {
+    background-color: var(--warning);
+  }
+  &_warning-light {
+    background-color: var(--warning-light);
+  }
+}

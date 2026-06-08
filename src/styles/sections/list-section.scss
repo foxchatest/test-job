@@ -13,6 +13,16 @@
 
   &__categories-list {
     display: flex;
-    gap: 12px;
+    gap: fluid(12px);
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: fluid(30px);
+  }
+
+  &__load-more-button {
+    margin: fluid(80px) auto 0;
   }
 }

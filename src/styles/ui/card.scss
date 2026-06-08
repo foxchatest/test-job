@@ -1,0 +1,54 @@
+@use "src/styles/utils" as *;
+
+.card {
+  border-radius: fluid(4px);
+  box-shadow: 0 fluid(20px) fluid(25px) fluid(10px) hsla(229, 6%, 63%, 0.07);
+  list-style: none;
+  width: 100%;
+  overflow: hidden;
+  @include transition(scale);
+
+  &:hover {
+    scale: 1.03;
+  }
+
+  &__picture {
+    display: block;
+    height: 240px;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-color: hsl(46, 100%, 59%);
+    }
+  }
+
+  &__body {
+    background: var(--bg);
+    padding: fluid(24px);
+    border: 1px solid var(--gray-300);
+    border-radius: fluid(4px);
+    border-top: 0;
+  }
+
+  &__tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: fluid(10px);
+    margin-bottom: fluid(20px);
+  }
+
+  &__title {
+    font: var(--font-lead-bold);
+    margin-bottom: fluid(20px);
+    display: block;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    gap: fluid(8px);
+  }
+}

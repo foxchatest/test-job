@@ -1,0 +1,31 @@
+@use "src/styles/utils" as *;
+
+.text-button {
+  color: var(--gray-800);
+
+  &_icon {
+    display: flex;
+    gap: fluid(16px);
+
+    &::before {
+      content: "";
+      display: block;
+      width: fluid(24px);
+      aspect-ratio: 1;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &_load-icon {
+    &::before {
+      rotate: 0deg;
+      background-image: url("/media/icons/load.svg");
+      @include transition(rotate);
+    }
+    &:hover::before {
+      rotate: 180deg;
+    }
+  }
+}
