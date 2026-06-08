@@ -1,0 +1,27 @@
+@use "src/styles/utils" as *;
+
+.button {
+  color: var(--gray-600);
+  font: var(--font-base-bold);
+  display: flex;
+  gap: 4px;
+  padding: fluid(10px) fluid(20px);
+  border-radius: 4px;
+  border-color: transparent;
+  border-width: 1px;
+  @include transition((border-color, color));
+
+  &::after {
+    content: attr(data-number);
+    display: block;
+    font-size: fluid(1rem, 10);
+    line-height: 1.5;
+    font-weight: 600;
+  }
+
+  &_active,
+  &:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+  }
+}

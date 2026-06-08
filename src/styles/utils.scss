@@ -10,3 +10,9 @@
 
   @return calc(#{$num} * #{$mod} * var(--screen-delta) + #{$value});
 }
+
+@mixin transition($property, $duration: 0.3s, $timing: ease-in-out) {
+  transition-timing-function: $timing;
+  transition-duration: $duration;
+  transition-property: $property;
+}
