@@ -1,6 +1,7 @@
 // vite.config.js
 import { defineConfig } from "vite";
 import path from "path";
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig({
   root: "src/pages/index",
@@ -13,9 +14,13 @@ export default defineConfig({
         assetFileNames: (assetInfo) => {
           const ext = path.extname(assetInfo.name).slice(1);
 
-          if (/png|jpg|jpeg|ico|svg|webp/.test(ext))
-            return "media/[name][extname]";
-          if (/woff|woff2/.test(ext)) return "fonts/[name][extname]";
+          if (/png|jpg|jpeg|ico|svg|webp/.test(ext)) {
+            return 'media/[name][extname]'
+          }
+
+          if (/woff|woff2/.test(ext)) {
+            return 'fonts/[name][extname]'
+          }
 
           return "[name][extname]";
         },
