@@ -1,3 +1,5 @@
+@use "src/styles/utils" as *;
+
 html {
     scroll-behavior: smooth;
     overflow-x: clip;
@@ -6,4 +8,23 @@ html {
 
 body {
     font: var(--font-base-bold);
+    background: var(--bg);
+}
+
+.section {
+    margin: fluid(85px) 0;
+
+    &:first-of-type {
+        margin-top: 45px;
+    }
+}
+
+.container {
+    max-width: fluid(1280px);
+    margin: 0 auto;
+    padding: 0 fluid(25px);
+}
+
+.title {
+    font: var(--font-h1);
 }

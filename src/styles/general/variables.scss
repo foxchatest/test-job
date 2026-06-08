@@ -1,5 +1,22 @@
+// Fluid responsive
 :root {
-  --init-width: 1230;
+  --init-width: 1920;
   --init-width_units: calc(var(--init-width) * 1px);
   --screen-delta: calc((100vw - var(--init-width_units)) / (var(--init-width) / 100) / 100);
+}
+
+// Colors
+:root {
+  --gray-900: hsl(227, 19%, 15%);
+  --gray-700: hsl(225, 3%, 49%);
+  --gray-600: hsl(229, 6%, 63%);
+  --gray-400: hsl(210, 8%, 85%);
+  --gray-300: hsl(218, 18%, 91%);
+  --bg: hsl(0, 0%, 100%);
+  --danger: hsl(0, 100%, 63%);
+  --success: hsl(168, 97%, 41%);
+  --info: hsl(223, 96%, 67%);
+  --info-light: hsl(242, 82%, 70%);
+  --warning: hsl(32, 94%, 56%);
+  --warning-light: hsl(341, 91%, 57%);
 }
