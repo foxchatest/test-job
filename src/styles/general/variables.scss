@@ -24,3 +24,20 @@
   --warning: hsl(32, 94%, 56%);
   --warning-light: hsl(341, 91%, 57%);
 }
+
+// Media queries
+$desktop1300: 1300px;
+$tablet800: 800px;
+$mobile600: 600px;
+
+@media only screen and (max-width: 1300px) {
+  :root {
+    --init-width: 1280;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  :root {
+    --init-width: 600;
+  }
+}

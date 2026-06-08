@@ -14,7 +14,6 @@
 
   &__picture {
     display: block;
-    height: 240px;
     width: 100%;
 
     img {
@@ -22,6 +21,7 @@
       height: 100%;
       object-fit: cover;
       background-color: hsl(46, 100%, 59%);
+      aspect-ratio: 4 / 3;
     }
   }
 
