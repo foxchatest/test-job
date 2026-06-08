@@ -61,7 +61,8 @@
     "tag": "Design",
     "price": "$240",
     "author": "Cody Fisher"
-  },{
+  },
+  {
     "title": "The Ultimate Google Ads Training Course",
     "image": "public/images/courses/card-1.jpg",
     "tag": "Marketing",
@@ -123,7 +124,8 @@
     "tag": "Design",
     "price": "$240",
     "author": "Cody Fisher"
-  },{
+  },
+  {
     "title": "The Ultimate Google Ads Training Course",
     "image": "public/images/courses/card-1.jpg",
     "tag": "Marketing",

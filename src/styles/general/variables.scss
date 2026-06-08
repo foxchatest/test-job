@@ -2,7 +2,9 @@
 :root {
   --init-width: 1920;
   --init-width_units: calc(var(--init-width) * 1px);
-  --screen-delta: calc((100vw - var(--init-width_units)) / (var(--init-width) / 100) / 100);
+  --screen-delta: calc(
+    (100vw - var(--init-width_units)) / (var(--init-width) / 100) / 100
+  );
 }
 
 // Colors

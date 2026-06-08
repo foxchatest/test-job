@@ -1,26 +1,26 @@
 @use "src/styles/utils" as *;
 
 html {
-    scroll-behavior: smooth;
-    overflow-x: clip;
-    font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: clip;
+  font-size: 62.5%;
 }
 
 body {
-    font: var(--font-base-bold);
-    background: var(--bg);
+  font: var(--font-base-bold);
+  background: var(--bg);
 }
 
 .section {
-    margin: fluid(85px) 0;
+  margin: fluid(85px) 0;
 
-    &:first-of-type {
-        margin-top: 45px;
-    }
+  &:first-of-type {
+    margin-top: 45px;
+  }
 }
 
 .container {
-    max-width: fluid(1280px);
-    margin: 0 auto;
-    padding: 0 fluid(25px);
+  max-width: fluid(1280px);
+  margin: 0 auto;
+  padding: 0 fluid(25px);
 }
