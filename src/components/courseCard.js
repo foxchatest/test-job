@@ -1,7 +1,5 @@
 import { COURSE_TYPE, COURSE_CARD_TEMPLATE_SELECTOR } from 'src/constants/courses.js'
 
-/** @typedef {import('../constants/courses.js').Course} Course */
-
 /** @typedef {{
  * title: HTMLElement,
  * image: HTMLSourceElement,
@@ -10,7 +8,7 @@ import { COURSE_TYPE, COURSE_CARD_TEMPLATE_SELECTOR } from 'src/constants/course
  * author: HTMLElement,
  * }} CourseFields */
 
-const coursesListElement = document.querySelector('.courses-list-section__list')
+export const coursesListElement = document.querySelector('.courses-list-section__list')
 
 /**
  * @param {import('../constants/courses.js').CourseType} courseType
@@ -34,7 +32,7 @@ function getTagClassByType(courseType) {
 
 /**
  * @param course {Course}
- * @return {void}
+ * @return {HTMLElement | null}
  * */
 export function createCourseCard(course) {
     const template = document.querySelector(COURSE_CARD_TEMPLATE_SELECTOR)
@@ -64,5 +62,9 @@ export function createCourseCard(course) {
     fieldElements.price.innerText = course.price
     fieldElements.author.innerText = `by ${course.author}`
 
-    coursesListElement.append(card)
+    return card
+}
+
+export function clearCoursesList() {
+    coursesListElement.innerHTML = ''
 }

@@ -1,34 +1,32 @@
-import { COURSE_TYPE } from 'src/constants/courses.js'
+import { COURSE_TYPE, PAGINATION_PER_PAGE } from 'src/constants/courses.js'
 import { countOfInArray } from 'src/utils/array.js'
+import { clearCoursesList, coursesListElement, createCourseCard } from 'src/components/courseCard.js'
 
 /** @typedef {import('../constants/courses.js').Course} Course */
 
 /** @typedef {HTMLElement & {
- * dataset: { number: string }
+ * dataset: { number: string, filterType: CourseType }
  }} FilterButtonElement */
 
-export function setActiveFilterButton() {
-    const hashLink = window.location.hash.replace('#', '')
-    /** @type {FilterButtonElement | null} */
-    const chosenFilterEl = document.querySelector(`[data-filter-type="${hashLink}"]`)
+function setActiveFilterButton() {
     document.querySelector('.list-section__category-item.button_active')?.classList.remove('button_active')
+    const hashLink = window.location.hash.replace('#', '')
 
-    if (chosenFilterEl) {
-        chosenFilterEl.classList.add('button_active')
-    } else {
-        document.querySelector('[data-filter-type="all"]')?.classList.add('button_active')
-    }
+    const filterButton =
+        document.querySelector(`[data-filter-type="${hashLink}"]`) || document.querySelector('[data-filter-type="all"]')
+
+    filterButton?.classList.add('button_active')
 }
 
 /**
  * @param {Course[]} courses
  * @return {void}
  * */
-export function initFilterButtons(courses) {
+export function setFilterButtonsNum(courses) {
     /** @type {FilterButtonElement | null} */
-    const allFilter = document.querySelector('[data-filter-type="all"]')
-    if (allFilter) {
-        allFilter.dataset.number = courses.length.toString()
+    const allFilterButton = document.querySelector('[data-filter-type="all"]')
+    if (allFilterButton) {
+        allFilterButton.dataset.number = courses.length.toString()
     }
 
     Object.values(COURSE_TYPE).forEach((type) => {
@@ -38,4 +36,28 @@ export function initFilterButtons(courses) {
 
         buttonEl.dataset.number = countOfInArray(courses, (i) => i?.type === type)
     })
+}
+
+/**
+ * @param {Course[]} courses
+ * */
+function mountCoursesListToDOM(courses) {
+    courses
+      .slice(0, PAGINATION_PER_PAGE)
+      .map(createCourseCard)
+      .forEach((el) => coursesListElement.append(el))
+}
+
+/** @param {Course[]} rawCoursesList */
+export function changeFilter(rawCoursesList) {
+    setActiveFilterButton()
+    clearCoursesList()
+
+    /** @type {FilterButtonElement | null} */
+    const filterButton = document.querySelector(':not([data-filter-type="all"]).button_active')
+    let coursesList = filterButton
+        ? rawCoursesList.filter((i) => i.type === filterButton.dataset.filterType)
+        : rawCoursesList
+
+    mountCoursesListToDOM(coursesList)
 }
