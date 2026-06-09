@@ -30,6 +30,24 @@ $desktop1300: 1300px;
 $tablet800: 800px;
 $mobile600: 600px;
 
+@media only screen and (min-width: 2600px) {
+  :root {
+    --init-width: 3400;
+  }
+}
+
+@media only screen and (max-width: 2600px) {
+  :root {
+    --init-width: 2400;
+  }
+}
+
+@media only screen and (max-width: 2000px) {
+  :root {
+    --init-width: 1920;
+  }
+}
+
 @media only screen and (max-width: 1300px) {
   :root {
     --init-width: 1280;
