@@ -1,6 +1,6 @@
-import { COURSE_TYPE, PAGINATION_PER_PAGE } from 'src/constants/courses.js'
+import { COURSE_TYPE } from 'src/constants/courses.js'
 import { countOfInArray } from 'src/utils/array.js'
-import { clearCoursesList, coursesListElement, createCourseCard } from 'src/components/courseCard.js'
+import { clearCoursesList, mountCoursesListToDOM } from 'src/components/courseCard.js'
 
 /** @typedef {import('../constants/courses.js').Course} Course */
 
@@ -39,17 +39,10 @@ export function setFilterButtonsNum(courses) {
 }
 
 /**
- * @param {Course[]} courses
+ * @param {Course[]} rawCoursesList
+ * @return {Course[]}
  * */
-function mountCoursesListToDOM(courses) {
-    courses
-      .slice(0, PAGINATION_PER_PAGE)
-      .map(createCourseCard)
-      .forEach((el) => coursesListElement.append(el))
-}
-
-/** @param {Course[]} rawCoursesList */
-export function changeFilter(rawCoursesList) {
+export function updateFilter(rawCoursesList) {
     setActiveFilterButton()
     clearCoursesList()
 
@@ -60,4 +53,5 @@ export function changeFilter(rawCoursesList) {
         : rawCoursesList
 
     mountCoursesListToDOM(coursesList)
+    return coursesList
 }

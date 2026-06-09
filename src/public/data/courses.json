@@ -8,7 +8,39 @@
         "author": "Marvin McKinney"
     },
     {
-        "title": "Product Management Fundamentals",
+        "title": "Product Management Fundamentals1",
+        "image": "/media/courses/card-2.jpg",
+        "type": "management",
+        "tag": "Management",
+        "price": "$200",
+        "author": "Leslie Alexander Li"
+    },
+    {
+        "title": "Product Management",
+        "image": "/media/courses/card-2.jpg",
+        "type": "management",
+        "tag": "Management",
+        "price": "$200",
+        "author": "Leslie Alexander Li"
+    },
+    {
+        "title": "Product Management Fundamentals2",
+        "image": "/media/courses/card-2.jpg",
+        "type": "management",
+        "tag": "Management",
+        "price": "$200",
+        "author": "Leslie Alexander Li"
+    },
+    {
+        "title": "Product Management Fundamentals3",
+        "image": "/media/courses/card-2.jpg",
+        "type": "management",
+        "tag": "Management",
+        "price": "$200",
+        "author": "Leslie Alexander Li"
+    },
+    {
+        "title": "Product Management Fundamentals4",
         "image": "/media/courses/card-2.jpg",
         "type": "management",
         "tag": "Management",

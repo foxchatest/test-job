@@ -1,1 +1,3 @@
-// TODO: поиск
+export function initSearchField() {
+
+}

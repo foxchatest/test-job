@@ -1,4 +1,6 @@
-import { COURSE_TYPE, COURSE_CARD_TEMPLATE_SELECTOR } from 'src/constants/courses.js'
+import {
+    COURSE_CARD_TEMPLATE_SELECTOR, COURSE_TYPE, PAGE_GET_PARAM, PAGINATION_PER_PAGE,
+} from 'src/constants/courses.js'
 
 /** @typedef {{
  * title: HTMLElement,
@@ -67,4 +69,17 @@ export function createCourseCard(course) {
 
 export function clearCoursesList() {
     coursesListElement.innerHTML = ''
+}
+
+/**
+ * @param {Course[]} courses
+ * */
+export function mountCoursesListToDOM(courses) {
+    const searchParams = new URLSearchParams(window.location.search)
+    const currentPage = Number(searchParams.get(PAGE_GET_PARAM) || '1')
+
+    courses
+      .slice(0, PAGINATION_PER_PAGE * currentPage)
+      .map(createCourseCard)
+      .forEach((el) => coursesListElement.append(el))
 }
