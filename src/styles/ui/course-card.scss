@@ -1,22 +1,22 @@
-@use "src/styles/utils" as *;
+@use 'src/styles/utils' as *;
 
 .course-card {
-  &__price {
-    font: var(--font-large-bold);
-    color: var(--danger);
-  }
-
-  &__author {
-    font: var(--font-large-bold);
-    color: var(--gray-700);
-
-    &::before {
-      content: "|";
-      margin-right: fluid(8px);
+    &__price {
+        color: var(--danger);
+        font: var(--font-large-bold);
     }
-  }
 
-  &_template {
-    display: none;
-  }
+    &__author {
+        color: var(--gray-700);
+        font: var(--font-large-bold);
+
+        &::before {
+            content: '|';
+            margin-right: fluid(8px);
+        }
+    }
+
+    &_template {
+        display: none;
+    }
 }

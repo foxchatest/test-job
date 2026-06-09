@@ -1,28 +1,26 @@
 // Fluid responsive
 :root {
-  --init-width: 1920;
-  --init-width_units: calc(var(--init-width) * 1px);
-  --screen-delta: calc(
-    (100vw - var(--init-width_units)) / (var(--init-width) / 100) / 100
-  );
+    --init-width: 1920;
+    --init-width_units: calc(var(--init-width) * 1px);
+    --screen-delta: calc((100vw - var(--init-width_units)) / (var(--init-width) / 100) / 100);
 }
 
 // Colors
 :root {
-  --gray-900: hsl(227, 19%, 15%);
-  --gray-800: hsl(228, 10%, 29%);
-  --gray-700: hsl(225, 3%, 49%);
-  --gray-600: hsl(229, 6%, 63%);
-  --gray-400: hsl(210, 8%, 85%);
-  --gray-300: hsl(218, 18%, 91%);
-  --bg: hsl(0, 0%, 100%);
-  --primary: hsl(2, 100%, 61%);
-  --danger: hsl(0, 100%, 63%);
-  --success: hsl(168, 97%, 41%);
-  --info: hsl(223, 96%, 67%);
-  --info-light: hsl(242, 82%, 70%);
-  --warning: hsl(32, 94%, 56%);
-  --warning-light: hsl(341, 91%, 57%);
+    --gray-900: hsl(227, 19%, 15%);
+    --gray-800: hsl(228, 10%, 29%);
+    --gray-700: hsl(225, 3%, 49%);
+    --gray-600: hsl(229, 6%, 63%);
+    --gray-400: hsl(210, 8%, 85%);
+    --gray-300: hsl(218, 18%, 91%);
+    --bg: hsl(0, 0%, 100%);
+    --primary: hsl(2, 100%, 61%);
+    --danger: hsl(0, 100%, 63%);
+    --success: hsl(168, 97%, 41%);
+    --info: hsl(223, 96%, 67%);
+    --info-light: hsl(242, 82%, 70%);
+    --warning: hsl(32, 94%, 56%);
+    --warning-light: hsl(341, 91%, 57%);
 }
 
 // Media queries
@@ -31,31 +29,31 @@ $tablet800: 800px;
 $mobile600: 600px;
 
 @media only screen and (min-width: 2600px) {
-  :root {
-    --init-width: 3400;
-  }
+    :root {
+        --init-width: 3400;
+    }
 }
 
 @media only screen and (max-width: 2600px) {
-  :root {
-    --init-width: 2400;
-  }
+    :root {
+        --init-width: 2400;
+    }
 }
 
 @media only screen and (max-width: 2000px) {
-  :root {
-    --init-width: 1920;
-  }
+    :root {
+        --init-width: 1920;
+    }
 }
 
 @media only screen and (max-width: 1300px) {
-  :root {
-    --init-width: 1280;
-  }
+    :root {
+        --init-width: 1280;
+    }
 }
 
 @media only screen and (max-width: 800px) {
-  :root {
-    --init-width: 600;
-  }
+    :root {
+        --init-width: 600;
+    }
 }

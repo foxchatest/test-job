@@ -1,40 +1,40 @@
-@use "sass:math";
+@use 'sass:math';
 
 @function strip-unit($value) {
-  @return math.div($value, $value * 0 + 1);
+    @return math.div($value, $value * 0 + 1);
 }
 
 @function fluid($value, $mod: 1) {
-  $num: strip-unit($value);
-  $unit: math.unit($value);
+    $num: strip-unit($value);
+    $unit: math.unit($value);
 
-  @return calc(#{$num} * #{$mod} * var(--screen-delta) + #{$value});
+    @return calc(#{$num} * #{$mod} * var(--screen-delta) + #{$value});
 }
 
 @mixin transition($property, $duration: 0.3s, $timing: ease-in-out) {
-  transition-timing-function: $timing;
-  transition-duration: $duration;
-  transition-property: $property;
+    transition-timing-function: $timing;
+    transition-duration: $duration;
+    transition-property: $property;
 }
 
 @mixin custom-scroll($width, $track-color, $thumb-color, $height: initial) {
-  scrollbar-width: #{$width};
-  scrollbar-color: #{$thumb-color};
+    scrollbar-width: #{$width};
+    scrollbar-color: #{$thumb-color};
 
-  &::-webkit-scrollbar {
-    width: #{$width};
-    height: #{$height};
-  }
+    &::-webkit-scrollbar {
+        width: #{$width};
+        height: #{$height};
+    }
 
-  &::-webkit-scrollbar-thumb {
-    background-color: #{$thumb-color};
-  }
+    &::-webkit-scrollbar-thumb {
+        background-color: #{$thumb-color};
+    }
 
-  &::-webkit-scrollbar-track {
-    background-color: #{$track-color};
-  }
+    &::-webkit-scrollbar-track {
+        background-color: #{$track-color};
+    }
 }
 
 @mixin transparent-scroll() {
-  @include custom-scroll(0, transparent, transparent, 0);
+    @include custom-scroll(0, transparent, transparent, 0);
 }

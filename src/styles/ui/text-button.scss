@@ -1,31 +1,31 @@
-@use "src/styles/utils" as *;
+@use 'src/styles/utils' as *;
 
 .text-button {
-  color: var(--gray-800);
+    color: var(--gray-800);
 
-  &_icon {
-    display: flex;
-    gap: fluid(16px);
+    &_icon {
+        gap: fluid(16px);
+        display: flex;
 
-    &::before {
-      content: "";
-      display: block;
-      width: fluid(24px);
-      aspect-ratio: 1;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
+        &::before {
+            aspect-ratio: 1;
+            content: '';
+            width: fluid(24px);
+            display: block;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
     }
-  }
 
-  &_load-icon {
-    &::before {
-      rotate: 0deg;
-      background-image: url("/media/icons/load.svg");
-      @include transition(rotate);
+    &_load-icon {
+        &::before {
+            rotate: 0deg;
+            background-image: url('/media/icons/load.svg');
+            @include transition(rotate);
+        }
+        &:hover::before {
+            rotate: 180deg;
+        }
     }
-    &:hover::before {
-      rotate: 180deg;
-    }
-  }
 }

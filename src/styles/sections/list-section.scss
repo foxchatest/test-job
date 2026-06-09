@@ -1,74 +1,74 @@
-@use "src/styles/utils" as *;
-@use "src/styles/general/variables" as *;
+@use 'src/styles/utils' as *;
+@use 'src/styles/general/variables' as *;
 
 .list-section {
-  &__top {
-    margin-bottom: fluid(60px);
-    gap: fluid(20px);
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__search-input {
-    max-width: fluid(315px);
-    flex-shrink: 0;
-  }
-
-  &__categories-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: fluid(12px);
-    @include transparent-scroll;
-  }
-
-  &__category-item {
-    text-wrap: nowrap;
-  }
-
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: fluid(30px);
-  }
-
-  &__load-more-button {
-    margin: fluid(80px) auto 0;
-  }
-}
-
-@media only screen and (max-width: $tablet800) {
-  .list-section {
     &__top {
-      margin-bottom: fluid(25px);
-      flex-direction: column-reverse;
+        gap: fluid(20px);
+        margin-bottom: fluid(60px);
+        display: flex;
+        justify-content: space-between;
     }
 
     &__search-input {
-      max-width: 100%;
+        max-width: fluid(315px);
+        flex-shrink: 0;
     }
 
     &__categories-list {
-      gap: fluid(5px);
-      flex-wrap: nowrap;
-      overflow: scroll;
-      padding: 0 var(--container-padding);
-      margin: 0 var(--negative-container-padding);
+        gap: fluid(12px);
+        display: flex;
+        flex-wrap: wrap;
+        @include transparent-scroll;
+    }
+
+    &__category-item {
+        text-wrap: nowrap;
     }
 
     &__list {
-      grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: fluid(30px);
+        display: grid;
     }
 
     &__load-more-button {
-      margin-top: fluid(45px);
+        margin: fluid(80px) auto 0;
     }
-  }
+}
+
+@media only screen and (max-width: $tablet800) {
+    .list-section {
+        &__top {
+            margin-bottom: fluid(25px);
+            flex-direction: column-reverse;
+        }
+
+        &__search-input {
+            max-width: 100%;
+        }
+
+        &__categories-list {
+            gap: fluid(5px);
+            margin: 0 var(--negative-container-padding);
+            padding: 0 var(--container-padding);
+            flex-wrap: nowrap;
+            overflow: scroll;
+        }
+
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__load-more-button {
+            margin-top: fluid(45px);
+        }
+    }
 }
 
 @media only screen and (max-width: $mobile600) {
-  .list-section {
-    &__list {
-      grid-template-columns: repeat(1, 1fr);
+    .list-section {
+        &__list {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
-  }
 }

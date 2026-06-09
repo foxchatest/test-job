@@ -1,52 +1,52 @@
-@use "src/styles/utils" as *;
-@use "src/styles/general/variables" as *;
+@use 'src/styles/utils' as *;
+@use 'src/styles/general/variables' as *;
 
 html {
-  scroll-behavior: smooth;
-  overflow-x: clip;
-  font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow-x: clip;
+    font-size: 62.5%;
 }
 
 .main-wrapper {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .main {
-  flex: 1 1 0;
+    flex: 1 1 0;
 }
 
 body {
-  overflow-x: clip;
-  font: var(--font-base-bold);
-  background: var(--bg);
+    overflow-x: clip;
+    font: var(--font-base-bold);
+    background: var(--bg);
 }
 
 .section {
-  margin: fluid(85px) 0;
+    margin: fluid(85px) 0;
 
-  &:first-of-type {
-    margin-top: 45px;
-  }
+    &:first-of-type {
+        margin-top: 45px;
+    }
 }
 
 .container {
-  --container-padding: #{fluid(25px)};
-  --negative-container-padding: calc(var(--container-padding) * -1);
-  max-width: fluid(1280px);
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
+    --container-padding: #{fluid(25px)};
+    --negative-container-padding: calc(var(--container-padding) * -1);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    max-width: fluid(1280px);
 }
 
 @media only screen and (max-width: $tablet800) {
-  .section {
-    margin: fluid(55px) 0;
+    .section {
+        margin: fluid(55px) 0;
 
-    &:first-of-type {
-      margin-top: 30px;
+        &:first-of-type {
+            margin-top: 30px;
+        }
     }
-  }
 }

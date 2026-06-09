@@ -1,29 +1,29 @@
-@use "src/styles/utils" as *;
+@use 'src/styles/utils' as *;
 
 .input {
-  --pd-x: #{fluid(16px)};
-  --icon-size: #{fluid(16px)};
-  padding: fluid(14px) 0;
-  padding-right: calc(var(--pd-x) + var(--icon-size) + #{fluid(15px)});
-  padding-left: var(--pd-x);
-  font: var(--font-small);
-  border-radius: 4px;
-  border: 1px solid var(--gray-600);
-  width: 100%;
-  position: relative;
-  background-image: url("public/media/icons/search.svg");
-  background-position: center right var(--pd-x);
-  background-size: var(--icon-size);
-  background-repeat: no-repeat;
-  height: fit-content;
-  @include transition((border-color));
+    --pd-x: #{fluid(16px)};
+    --icon-size: #{fluid(16px)};
+    position: relative;
+    padding: fluid(14px) 0;
+    padding-right: calc(var(--pd-x) + var(--icon-size) + #{fluid(15px)});
+    padding-left: var(--pd-x);
+    width: 100%;
+    height: fit-content;
+    font: var(--font-small);
+    background-image: url('public/media/icons/search.svg');
+    background-repeat: no-repeat;
+    background-position: center right var(--pd-x);
+    background-size: var(--icon-size);
+    border-radius: 4px;
+    border: 1px solid var(--gray-600);
+    @include transition((border-color));
 
-  &::placeholder {
-    color: var(--gray-600);
-    opacity: 1;
-  }
+    &::placeholder {
+        color: var(--gray-600);
+        opacity: 1;
+    }
 
-  &:focus {
-    border-color: var(--gray-900);
-  }
+    &:focus {
+        border-color: var(--gray-900);
+    }
 }

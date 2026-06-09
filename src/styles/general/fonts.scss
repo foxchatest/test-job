@@ -1,58 +1,58 @@
-@use "src/styles/utils";
+@use 'src/styles/utils';
 
 @font-face {
-  font-family: "Lato";
-  src:
-    url("src/fonts/Lato/Lato-Regular.woff2") format("woff2"),
-    url("src/fonts/Lato/Lato-Regular.woff") format("woff");
-  font-weight: 400;
-  font-display: swap;
+    src:
+        url('src/fonts/Lato/Lato-Regular.woff2') format('woff2'),
+        url('src/fonts/Lato/Lato-Regular.woff') format('woff');
+    font-display: swap;
+    font-family: 'Lato';
+    font-weight: 400;
 }
 
 @font-face {
-  font-family: "Lato";
-  src:
-    url("src/fonts/Lato/Lato-Bold.woff2") format("woff2"),
-    url("src/fonts/Lato/Lato-Bold.woff") format("woff");
-  font-weight: 600;
-  font-display: swap;
+    src:
+        url('src/fonts/Lato/Lato-Bold.woff2') format('woff2'),
+        url('src/fonts/Lato/Lato-Bold.woff') format('woff');
+    font-display: swap;
+    font-family: 'Lato';
+    font-weight: 600;
 }
 
 @font-face {
-  font-family: "Lato";
-  src:
-    url("src/fonts/Lato/Lato-Black.woff2") format("woff2"),
-    url("src/fonts/Lato/Lato-Black.woff") format("woff");
-  font-weight: 900;
-  font-display: swap;
+    src:
+        url('src/fonts/Lato/Lato-Black.woff2') format('woff2'),
+        url('src/fonts/Lato/Lato-Black.woff') format('woff');
+    font-display: swap;
+    font-family: 'Lato';
+    font-weight: 900;
 }
 
 :root {
-  --ff-lato: "Lato", sans-serif;
+    --ff-lato: 'Lato', sans-serif;
 
-  --font-h1-fz: #{utils.fluid(4.6rem, 10)};
-  --font-h1: 900 var(--font-h1-fz)/1.3 var(--ff-lato);
+    --font-h1-fz: #{utils.fluid(4.6rem, 10)};
+    --font-h1: 900 var(--font-h1-fz)/1.3 var(--ff-lato);
 
-  --font-h6-fz: #{utils.fluid(1.6rem, 10)};
-  --font-h6: 600 var(--font-h6-fz)/1.5 var(--ff-lato);
+    --font-h6-fz: #{utils.fluid(1.6rem, 10)};
+    --font-h6: 600 var(--font-h6-fz)/1.5 var(--ff-lato);
 
-  --font-large-fz: #{utils.fluid(1.8rem, 10)};
-  --font-large: 400 var(--font-large-fz)/1.5 var(--ff-lato);
+    --font-large-fz: #{utils.fluid(1.8rem, 10)};
+    --font-large: 400 var(--font-large-fz)/1.5 var(--ff-lato);
 
-  --font-large-bold-fz: #{utils.fluid(1.8rem, 10)};
-  --font-large-bold: 600 var(--font-large-bold-fz)/1.5 var(--ff-lato);
+    --font-large-bold-fz: #{utils.fluid(1.8rem, 10)};
+    --font-large-bold: 600 var(--font-large-bold-fz)/1.5 var(--ff-lato);
 
-  --font--lead-bold-fz: #{utils.fluid(2rem, 10)};
-  --font-lead-bold: 600 var(--font--lead-bold-fz)/1.5 var(--ff-lato);
+    --font--lead-bold-fz: #{utils.fluid(2rem, 10)};
+    --font-lead-bold: 600 var(--font--lead-bold-fz)/1.5 var(--ff-lato);
 
-  --font-base-bold-fz: #{utils.fluid(1.6rem, 10)};
-  --font-base-bold: 600 var(--font-base-bold-fz)/1.6 var(--ff-lato);
+    --font-base-bold-fz: #{utils.fluid(1.6rem, 10)};
+    --font-base-bold: 600 var(--font-base-bold-fz)/1.6 var(--ff-lato);
 
-  --font-small-fz: #{utils.fluid(1.4rem, 10)};
-  --font-small: 400 var(--font-small-fz)/1.5 var(--ff-lato);
+    --font-small-fz: #{utils.fluid(1.4rem, 10)};
+    --font-small: 400 var(--font-small-fz)/1.5 var(--ff-lato);
 }
 
 @mixin font-h6 {
-  font: var(--font-h6);
-  letter-spacing: 1px;
+    font: var(--font-h6);
+    letter-spacing: 1px;
 }
