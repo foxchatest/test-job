@@ -5,6 +5,8 @@
   box-shadow: 0 fluid(20px) fluid(25px) fluid(10px) hsla(229, 6%, 63%, 0.07);
   list-style: none;
   width: 100%;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   @include transition(scale);
 
@@ -21,11 +23,12 @@
       height: 100%;
       object-fit: cover;
       background-color: hsl(46, 100%, 59%);
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 4 / 2.5;
     }
   }
 
   &__body {
+    flex-grow: 1;
     background: var(--bg);
     padding: fluid(24px);
     border: 1px solid var(--gray-300);

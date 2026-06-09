@@ -1,7 +1,6 @@
 // vite.config.js
 import { defineConfig } from "vite";
 import path from "path";
-import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig({
   root: "src/pages/index",
@@ -11,6 +10,8 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       output: {
+        chunkFileNames: '[name]-[hash].js',
+        entryFileNames: '[name]-[hash].js',
         assetFileNames: (assetInfo) => {
           const ext = path.extname(assetInfo.name).slice(1);
 
