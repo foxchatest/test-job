@@ -4,9 +4,9 @@
  * @return {number}
  * */
 export function countOfInArray(array, check) {
-  let counter = 0
-  array.forEach(i => {
-    if (check(i)) counter++
-  })
-  return counter
+  let counter = 0;
+  array.forEach((i) => {
+    if (check(i)) counter++;
+  });
+  return counter;
 }

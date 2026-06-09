@@ -1,5 +1,5 @@
-import { COURSE_TYPE } from 'src/constants/courses.js';
-import { countOfInArray } from 'src/utils/array.js';
+import { COURSE_TYPE } from "src/constants/courses.js";
+import { countOfInArray } from "src/utils/array.js";
 
 /** @typedef {import('../constants/courses.js').Course} Course */
 
@@ -8,15 +8,21 @@ import { countOfInArray } from 'src/utils/array.js';
  }} FilterButtonElement */
 
 export function setActiveFilterButton() {
-  const hashLink = window.location.hash.replace('#', '')
+  const hashLink = window.location.hash.replace("#", "");
   /** @type {FilterButtonElement | null} */
-  const chosenFilterEl = document.querySelector(`[data-filter-type="${hashLink}"]`)
-  document.querySelector('.list-section__category-item.button_active')?.classList.remove('button_active')
+  const chosenFilterEl = document.querySelector(
+    `[data-filter-type="${hashLink}"]`,
+  );
+  document
+    .querySelector(".list-section__category-item.button_active")
+    ?.classList.remove("button_active");
 
   if (chosenFilterEl) {
-    chosenFilterEl.classList.add('button_active')
+    chosenFilterEl.classList.add("button_active");
   } else {
-    document.querySelector('[data-filter-type="all"]')?.classList.add('button_active')
+    document
+      .querySelector('[data-filter-type="all"]')
+      ?.classList.add("button_active");
   }
 }
 
@@ -33,9 +39,9 @@ export function initFilterButtons(courses) {
 
   Object.values(COURSE_TYPE).forEach((type) => {
     /** @type {FilterButtonElement | null} */
-    const buttonEl = document.querySelector(`[data-filter-type="${type}"]`)
-    if (!buttonEl) return
+    const buttonEl = document.querySelector(`[data-filter-type="${type}"]`);
+    if (!buttonEl) return;
 
-    buttonEl.dataset.number = countOfInArray(courses, (i) => i?.type === type)
-  })
+    buttonEl.dataset.number = countOfInArray(courses, (i) => i?.type === type);
+  });
 }

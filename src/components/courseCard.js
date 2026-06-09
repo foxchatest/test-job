@@ -1,4 +1,7 @@
-import { COURSE_TYPE, COURSE_CARD_TEMPLATE_SELECTOR } from 'src/constants/courses.js';
+import {
+  COURSE_TYPE,
+  COURSE_CARD_TEMPLATE_SELECTOR,
+} from "src/constants/courses.js";
 
 /** @typedef {import('../constants/courses.js').Course} Course */
 
@@ -10,7 +13,9 @@ import { COURSE_TYPE, COURSE_CARD_TEMPLATE_SELECTOR } from 'src/constants/course
  * author: HTMLElement,
  * }} CourseFields */
 
-const coursesListElement = document.querySelector(".courses-list-section__list");
+const coursesListElement = document.querySelector(
+  ".courses-list-section__list",
+);
 
 /**
  * @param {import('../constants/courses.js').CourseType} courseType

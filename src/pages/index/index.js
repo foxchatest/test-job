@@ -1,6 +1,9 @@
-import { PAGINATION_PER_PAGE } from 'src/constants/courses.js';
-import { createCourseCard } from 'src/components/courseCard.js';
-import { initFilterButtons, setActiveFilterButton } from 'src/features/filters.js';
+import { PAGINATION_PER_PAGE } from "src/constants/courses.js";
+import { createCourseCard } from "src/components/courseCard.js";
+import {
+  initFilterButtons,
+  setActiveFilterButton,
+} from "src/features/filters.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   /** @type {import('./constants/courses.js').Course[]} */
@@ -8,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   initFilterButtons(courses);
   setActiveFilterButton();
-  window.addEventListener('popstate', setActiveFilterButton);
+  window.addEventListener("popstate", setActiveFilterButton);
 
   courses.slice(0, PAGINATION_PER_PAGE).forEach(createCourseCard);
 });
