@@ -2,7 +2,7 @@
 @use "src/styles/variables" as *;
 
 .list-section {
-    &__top {
+    &__control {
         gap: fluid(20px);
         margin-bottom: fluid(60px);
         display: flex;
@@ -38,7 +38,7 @@
 
 @media only screen and (max-width: $tablet800) {
     .list-section {
-        &__top {
+        &__control {
             margin-bottom: fluid(25px);
             flex-direction: column-reverse;
         }
