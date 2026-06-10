@@ -27,7 +27,7 @@ export async function setNumbersInFilterButtons(listSectionEl, getData) {
  * @param {HTMLElement} listSectionEl
  * @param {'all' | ListSectionCard['type']} type
  * */
-function setActiveFilterButton(listSectionEl, type) {
+export function setActiveFilterButton(listSectionEl, type) {
   listSectionEl.querySelector('.list-section__category-item.button_active')?.classList.remove('button_active')
 
   const filterButton =

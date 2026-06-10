@@ -1,4 +1,7 @@
-import { filterDataByType, setNumbersInFilterButtons } from './filter.js'
+import { filterDataByType, setActiveFilterButton, setNumbersInFilterButtons } from './filter.js'
+import {
+    initLoadMoreButton, PAGE_CHANGED_EVENT, paginateData, setPage, updateVisibilityShowMoreButton,
+} from 'src/blocks/list-section/pagination.js'
 
 /** @typedef {{
  * type: string,
@@ -39,14 +42,28 @@ export async function initListSection({ listSection, getData, beforeMountCard })
         })
     }
 
-    const updateFilter = async () => {
+    const updateOutput = async () => {
         const data = await getData().catch(() => [])
         const hashText = window.location.hash.replace('#', '')
         const filteredData = filterDataByType(data, hashText)
-        mountDataToDOM(filteredData)
+        const paginatedData = paginateData(filteredData)
+        mountDataToDOM(paginatedData)
+        updateVisibilityShowMoreButton(paginatedData.length, listSection)
+        setActiveFilterButton(listSection, hashText)
     }
 
     setNumbersInFilterButtons(listSection, getData)
-    window.addEventListener('hashchange', updateFilter)
-    updateFilter()
+    window.addEventListener('hashchange', () => {
+        setPage(1)
+        updateOutput()
+    })
+    window.addEventListener(PAGE_CHANGED_EVENT, (e) => {
+        const event = /** @type {PageChangedEvent} */ (e)
+        if (event.detail.newPage === 1) return
+
+        updateOutput()
+    })
+    updateOutput()
+
+    initLoadMoreButton(listSection)
 }
