@@ -1,14 +1,5 @@
 /** @typedef {'marketing' | 'hr' | 'development' | 'design' | 'management'} CourseType */
 
-/** @typedef  {{
- * title: string,
- * image: string,
- * type: CourseType,
- * tag: string,
- * price: string,
- * author: string,
- * }} Course */
-
 /** @type {Record<Uppercase<CourseType>, CourseType>} */
 export const COURSE_TYPE = {
     MANAGEMENT: 'management',

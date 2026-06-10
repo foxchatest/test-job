@@ -1,25 +1,18 @@
-import { updateFilter, setFilterButtonsNum } from 'src/features/filters.js'
-import { initFilterButton, setPage, updateLoadMoreButton } from 'src/features/pagination.js'
-import { URL_CHANGE_EVENT, UrlChangeEvent } from 'src/constants/courses.js'
-import { initSearchField } from 'src/features/search.js'
+import { initListSection } from 'src/blocks/list-section/list-section.js'
+import { fillCardWithCourseInfo } from 'src/blocks/course-card/course-card.js'
+
+async function getCoursesData() {
+    const res = await fetch('/data/courses.json')
+    return res.json()
+}
 
 document.addEventListener('DOMContentLoaded', async () => {
     /** @type {import('./constants/courses.js').Course[]} */
-    const courses = await (await fetch('/data/courses.json')).json()
+    const coursesListSection = document.querySelector('.courses-list-section')
 
-    setFilterButtonsNum(courses)
-    updateFilter(courses)
-
-    window.addEventListener('hashchange', () => {
-        setPage(1)
-        window.dispatchEvent(UrlChangeEvent)
+    initListSection({
+        listSection: coursesListSection,
+        getData: getCoursesData,
+        beforeMountCard: fillCardWithCourseInfo,
     })
-
-    window.addEventListener(URL_CHANGE_EVENT, () => {
-        const filteredCourses = updateFilter(courses)
-        updateLoadMoreButton(filteredCourses)
-    })
-
-    initFilterButton(courses)
-    initSearchField(courses)
 })

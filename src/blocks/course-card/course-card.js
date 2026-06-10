@@ -16,7 +16,7 @@ export const coursesListElement = document.querySelector('.courses-list-section_
  * @param {import('constants/courses.js').CourseType} courseType
  * @return {string}
  * */
-function getTagClassByType(courseType) {
+function getTagClassByCourseType(courseType) {
     switch (courseType) {
         case COURSE_TYPE.MARKETING:
             return 'tag_success'
@@ -60,7 +60,7 @@ export function createCourseCard(course) {
     fieldElements.title.innerText = course.title
     fieldElements.tag.innerText = course.tag
     fieldElements.image.srcset = course.image
-    fieldElements.tag.classList.add(getTagClassByType(course.type))
+    fieldElements.tag.classList.add(getTagClassByCourseType(course.type))
     fieldElements.price.innerText = course.price
     fieldElements.author.innerText = `by ${course.author}`
 
@@ -82,4 +82,41 @@ export function mountCoursesListToDOM(courses) {
       .slice(0, PAGINATION_PER_PAGE * currentPage)
       .map(createCourseCard)
       .forEach((el) => coursesListElement.append(el))
+}
+
+/** @typedef  {ListSectionCard & {
+ * title: string,
+ * image: string,
+ * type: CourseType,
+ * tag: string,
+ * price: string,
+ * author: string,
+ * }} Course */
+
+/**
+ * @param {HTMLElement} cardEl
+ * @param {Course} course
+ * */
+export function fillCardWithCourseInfo(cardEl, course) {
+    /** @type {[keyof Exclude<Course, "type">]} */
+    const fields = ['title', 'image', 'price', 'author', 'tag']
+
+    /** @type {CourseFields} */
+    const fieldElements = Object.fromEntries(
+      fields.map((f) => {
+          const el = cardEl.querySelector(`[data-field=${f}]`)
+          return [f, el]
+      }),
+    )
+
+    if (!fields.every((f) => fieldElements[f])) return
+
+    fieldElements.title.innerText = course.title
+    fieldElements.tag.innerText = course.tag
+    fieldElements.image.srcset = course.image
+    fieldElements.tag.classList.add(getTagClassByCourseType(course.type))
+    fieldElements.price.innerText = course.price
+    fieldElements.author.innerText = `by ${course.author}`
+
+    return cardEl
 }

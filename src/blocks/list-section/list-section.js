@@ -1,0 +1,52 @@
+import { filterDataByType, setNumbersInFilterButtons } from './filter.js'
+
+/** @typedef {{
+ * type: string,
+ * title: string,
+ }} ListSectionCard */
+
+function createCardElement() {
+    const template = document.querySelector('.card_template')
+    if (!template) return
+
+    const card = document.createElement('li')
+    card.className = 'card'
+    card.innerHTML = template.innerHTML
+
+    return card
+}
+
+/** @typedef {() => Promise<ListSectionCard[]>} GetListSectionDataFn */
+
+/** @typedef {{
+ * listSection: HTMLElement
+ * getData: GetListSectionDataFn
+ * beforeMountCard: (cardEl: HTMLElement, data: ListSectionCard) => void
+ }} InitListSectionOptions */
+
+/** @param {InitListSectionOptions} options */
+export async function initListSection({ listSection, getData, beforeMountCard }) {
+    const listEl = listSection.querySelector('.list-section__list')
+
+    /** @param {ListSectionCard[]} data */
+    const mountDataToDOM = (data) => {
+        listEl.innerHTML = ''
+
+        data.map((dataItem) => {
+            const cardEl = createCardElement()
+            beforeMountCard(cardEl, dataItem)
+            listEl.append(cardEl)
+        })
+    }
+
+    const updateFilter = async () => {
+        const data = await getData().catch(() => [])
+        const hashText = window.location.hash.replace('#', '')
+        const filteredData = filterDataByType(data, hashText)
+        mountDataToDOM(filteredData)
+    }
+
+    setNumbersInFilterButtons(listSection, getData)
+    window.addEventListener('hashchange', updateFilter)
+    updateFilter()
+}
