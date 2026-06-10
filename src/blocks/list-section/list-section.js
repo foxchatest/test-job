@@ -2,6 +2,9 @@ import { filterDataByType, setActiveFilterButton, setNumbersInFilterButtons } fr
 import {
     initLoadMoreButton, PAGE_CHANGED_EVENT, paginateData, setPage, updateVisibilityShowMoreButton,
 } from 'src/blocks/list-section/pagination.js'
+import {
+    filterDataBySearch, getSearchString, initSearchField, SEARCH_CHANGED_EVENT,
+} from 'src/blocks/list-section/search.js'
 
 /** @typedef {{
  * type: string,
@@ -46,8 +49,11 @@ export async function initListSection({ listSection, getData, beforeMountCard })
         const data = await getData().catch(() => [])
         const hashText = window.location.hash.replace('#', '')
         const filteredData = filterDataByType(data, hashText)
-        const paginatedData = paginateData(filteredData)
+        const searchFilter = filterDataBySearch(filteredData, getSearchString())
+        const paginatedData = paginateData(searchFilter)
+
         mountDataToDOM(paginatedData)
+
         updateVisibilityShowMoreButton(paginatedData.length, listSection)
         setActiveFilterButton(listSection, hashText)
     }
@@ -57,13 +63,20 @@ export async function initListSection({ listSection, getData, beforeMountCard })
         setPage(1)
         updateOutput()
     })
+
     window.addEventListener(PAGE_CHANGED_EVENT, (e) => {
         const event = /** @type {PageChangedEvent} */ (e)
         if (event.detail.newPage === 1) return
 
         updateOutput()
     })
+
+    window.addEventListener(SEARCH_CHANGED_EVENT, () => {
+        updateOutput()
+    })
+
     updateOutput()
 
     initLoadMoreButton(listSection)
+    initSearchField(listSection)
 }
