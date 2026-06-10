@@ -56,10 +56,10 @@ export function fillCardWithCourseInfo(cardEl, course) {
 
     /** @type {CourseFields} */
     const fieldElements = Object.fromEntries(
-      fields.map((f) => {
-          const el = cardEl.querySelector(`[data-field=${f}]`)
-          return [f, el]
-      }),
+        fields.map((f) => {
+            const el = cardEl.querySelector(`[data-field=${f}]`)
+            return [f, el]
+        }),
     )
 
     if (!fields.every((f) => fieldElements[f])) return

@@ -1,19 +1,19 @@
-@use "preflight";
-@use "reset";
-@use "variables";
-@use "global";
-@use "fonts";
+@use 'preflight';
+@use 'reset';
+@use 'variables';
+@use 'global';
+@use 'fonts';
 
-@use "src/blocks/main/main";
+@use 'src/blocks/main/main';
 
-@use "src/blocks/container/container";
-@use "src/blocks/section/section";
+@use 'src/blocks/container/container';
+@use 'src/blocks/section/section';
 
-@use "src/blocks/title/title";
+@use 'src/blocks/title/title';
 
-@use "src/blocks/button/button";
-@use "src/blocks/text-button/text-button";
-@use "src/blocks/input/input";
-@use "src/blocks/tag/tag";
-@use "src/blocks/card/card";
-@use "src/blocks/course-card/course-card";
+@use 'src/blocks/button/button';
+@use 'src/blocks/text-button/text-button';
+@use 'src/blocks/input/input';
+@use 'src/blocks/tag/tag';
+@use 'src/blocks/card/card';
+@use 'src/blocks/course-card/course-card';

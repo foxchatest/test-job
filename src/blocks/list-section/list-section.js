@@ -1,9 +1,16 @@
 import { filterDataByType, setActiveFilterButton, setNumbersInFilterButtons } from './filter.js'
 import {
-    initLoadMoreButton, PAGE_CHANGED_EVENT, paginateData, setPage, updateVisibilityShowMoreButton,
+    initLoadMoreButton,
+    PAGE_CHANGED_EVENT,
+    paginateData,
+    setPage,
+    updateVisibilityShowMoreButton,
 } from 'src/blocks/list-section/pagination.js'
 import {
-    filterDataBySearch, getSearchString, initSearchField, SEARCH_CHANGED_EVENT,
+    filterDataBySearch,
+    getSearchString,
+    initSearchField,
+    SEARCH_CHANGED_EVENT,
 } from 'src/blocks/list-section/search.js'
 
 /** @typedef {{

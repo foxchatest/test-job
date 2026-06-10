@@ -1,4 +1,4 @@
-@use "src/styles/utils" as *;
+@use 'src/styles/utils' as *;
 
 .input {
     --pd-x: #{fluid(16px)};
@@ -10,7 +10,7 @@
     width: 100%;
     height: fit-content;
     font: var(--font-small);
-    background-image: url("/media/icons/search.svg");
+    background-image: url('/media/icons/search.svg');
     background-repeat: no-repeat;
     background-position: center right var(--pd-x);
     background-size: var(--icon-size);
