@@ -1,4 +1,4 @@
-@use 'src/styles/utils' as *;
+@use "src/styles/utils" as *;
 
 .text-button {
     color: var(--gray-800);
@@ -9,7 +9,7 @@
 
         &::before {
             aspect-ratio: 1;
-            content: '';
+            content: "";
             width: fluid(24px);
             display: block;
             background-repeat: no-repeat;
@@ -21,7 +21,7 @@
     &_load-icon {
         &::before {
             rotate: 0deg;
-            background-image: url('/media/icons/load.svg');
+            background-image: url("/media/icons/load.svg");
             @include transition(rotate);
         }
         &:hover::before {

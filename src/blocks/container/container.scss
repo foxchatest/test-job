@@ -1,0 +1,9 @@
+@use "src/styles/utils" as *;
+
+.container {
+  --container-padding: #{fluid(25px)};
+  --negative-container-padding: calc(var(--container-padding) * -1);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  max-width: fluid(1280px);
+}

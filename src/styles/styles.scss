@@ -1,13 +1,19 @@
-@use 'src/styles/general/preflight';
-@use 'src/styles/general/reset';
-@use 'src/styles/general/variables';
-@use 'src/styles/general/global';
-@use 'src/styles/general/fonts';
+@use "preflight";
+@use "reset";
+@use "variables";
+@use "global";
+@use "fonts";
 
-@use 'src/styles/ui/text';
-@use 'src/styles/ui/button';
-@use 'src/styles/ui/text-button';
-@use 'src/styles/ui/input';
-@use 'src/styles/ui/card';
-@use 'src/styles/ui/tag';
-@use 'src/styles/ui/course-card';
+@use "src/blocks/main/main";
+
+@use "src/blocks/container/container";
+@use "src/blocks/section/section";
+
+@use "src/blocks/title/title";
+
+@use "src/blocks/button/button";
+@use "src/blocks/text-button/text-button";
+@use "src/blocks/input/input";
+@use "src/blocks/tag/tag";
+@use "src/blocks/card/card";
+@use "src/blocks/course-card/course-card";

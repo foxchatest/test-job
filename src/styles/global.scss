@@ -1,0 +1,14 @@
+@use "utils" as *;
+@use "variables" as *;
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+    font-size: 62.5%;
+}
+
+body {
+    overflow-x: clip;
+    font: var(--font-base-bold);
+    background: var(--bg);
+}
