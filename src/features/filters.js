@@ -1,6 +1,6 @@
 import { COURSE_TYPE } from 'src/constants/courses.js'
 import { countOfInArray } from 'src/utils/array.js'
-import { clearCoursesList, mountCoursesListToDOM } from 'src/components/courseCard.js'
+import { clearCoursesList, mountCoursesListToDOM } from 'src/blocks/course-card/course-card.js'
 
 /** @typedef {import('../constants/courses.js').Course} Course */
 

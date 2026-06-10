@@ -1,5 +1,5 @@
 import { UrlChangeEvent } from 'src/constants/courses.js'
-import { clearCoursesList, mountCoursesListToDOM } from 'src/components/courseCard.js'
+import { clearCoursesList, mountCoursesListToDOM } from 'src/blocks/course-card/course-card.js'
 
 /** @type {HTMLInputElement} */
 const searchFieldEl = document.querySelector('.list-section__search-input')

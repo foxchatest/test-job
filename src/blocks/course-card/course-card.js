@@ -13,7 +13,7 @@ import {
 export const coursesListElement = document.querySelector('.courses-list-section__list')
 
 /**
- * @param {import('../constants/courses.js').CourseType} courseType
+ * @param {import('constants/courses.js').CourseType} courseType
  * @return {string}
  * */
 function getTagClassByType(courseType) {
