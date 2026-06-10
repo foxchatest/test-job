@@ -45,6 +45,8 @@ export async function initListSection({ listSection, getData, beforeMountCard })
     const mountDataToDOM = (data) => {
         listEl.innerHTML = ''
 
+        if (!data.length) return listEl.innerText = 'Ничего не найдено'
+
         data.map((dataItem) => {
             const cardEl = createCardElement()
             beforeMountCard(cardEl, dataItem)
